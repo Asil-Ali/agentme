@@ -65,7 +65,7 @@ function Chat() {
       setLoading(false);
     });
   };
-  const _unused = () => {
+  // removed
     setTimeout(() => {
       setMsgs(p => [...p, { r: "agent", t: getResponse(q) }]);
       setLoading(false);
