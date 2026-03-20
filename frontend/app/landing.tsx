@@ -65,12 +65,6 @@ function Chat() {
       setLoading(false);
     });
   };
-  // removed
-    setTimeout(() => {
-      setMsgs(p => [...p, { r: "agent", t: getResponse(q) }]);
-      setLoading(false);
-    }, 1100);
-  };
 
   return (
     <div className="chat">
