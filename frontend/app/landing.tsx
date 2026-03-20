@@ -18,7 +18,7 @@ const DEMO_RESPONSES = {
   default: "I specialize in building AI systems that solve real business problems — RAG pipelines, autonomous agents, and intelligent automation. What are you looking to build?",
 };
 
-function getResponse(msg) {
+function getResponse(msg: string) {
   const m = msg.toLowerCase();
   if (m.includes("rag") || m.includes("system") || m.includes("build")) return DEMO_RESPONSES.rag;
   if (m.includes("service") || m.includes("offer") || m.includes("do")) return DEMO_RESPONSES.services;
@@ -33,7 +33,7 @@ function TypingEffect() {
   const [del, setDel] = useState(false);
   useEffect(() => {
     const phrase = QUESTIONS[idx];
-    let t;
+    let t: ReturnType<typeof setTimeout>;
     if (!del && text.length < phrase.length) t = setTimeout(() => setText(phrase.slice(0, text.length + 1)), 55);
     else if (!del) t = setTimeout(() => setDel(true), 2200);
     else if (del && text.length > 0) t = setTimeout(() => setText(text.slice(0, -1)), 28);
@@ -49,7 +49,7 @@ function Chat() {
   ]);
   const [val, setVal] = useState("");
   const [loading, setLoading] = useState(false);
-  const end = useRef(null);
+  const end = useRef<HTMLDivElement>(null);
   useEffect(() => { end.current?.scrollIntoView({ behavior: "smooth" }); }, [msgs]);
 
   const send = () => {
