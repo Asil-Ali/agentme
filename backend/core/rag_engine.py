@@ -42,7 +42,7 @@ MAX_TOKENS_BUDGET = 3000   # Approx token budget for RAG context in prompt
 # Embeddings — loaded once, reused everywhere
 # ──────────────────────────────────────────────
 
-def get_embeddings() -> HuggingFaceEmbeddings:
+def get_embeddings() 
     """
     Load embedding model once.
     all-MiniLM-L6-v2:
