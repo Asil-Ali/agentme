@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 claude = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-CLAUDE_MODEL   = "claude-haiku-4-5-20251001"
+CLAUDE_MODEL   = "claude-sonnet-4-5-20250929"
 MAX_TOKENS     = 1024
 HISTORY_LIMIT  = 10  # Keep last N messages to avoid token overflow
 
