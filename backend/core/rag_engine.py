@@ -50,11 +50,7 @@ def get_embeddings() -> HuggingFaceEmbeddings:
       - 384 dimensions (fast)
       - Solid multilingual support
     """
-    return HuggingFaceEmbeddings(
-        model_name=EMBED_MODEL,
-        model_kwargs={"device": "cpu"},
-        encode_kwargs={"normalize_embeddings": True},
-    )
+    return DefaultEmbeddingFunction()
 
 
 _embeddings: Optional[HuggingFaceEmbeddings] = None
