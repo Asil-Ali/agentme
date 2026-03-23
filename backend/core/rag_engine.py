@@ -53,7 +53,7 @@ def get_embeddings():
     return DefaultEmbeddingFunction()
 
 
-_embeddings: Optional[HuggingFaceEmbeddings] = None
+_embeddings = None
 
 def get_embeddings_singleton() -> HuggingFaceEmbeddings:
     """Singleton — load model only once per process."""
