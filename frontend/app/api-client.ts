@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://agentme.onrender.com"; // رابط ريندر المباشر
+const BACKEND_URL = "https://agentme.onrender.com"; // رابط ريندر المباشر.
 
 
 export const AgentAPI = {
