@@ -55,7 +55,7 @@ def get_embeddings():
 
 _embeddings = None
 
-def get_embeddings_singleton() -> HuggingFaceEmbeddings:
+def get_embeddings_singleton():
     """Singleton — load model only once per process."""
     global _embeddings
     if _embeddings is None:
