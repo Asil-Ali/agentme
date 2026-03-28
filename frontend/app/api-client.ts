@@ -3,7 +3,7 @@ const BACKEND_URL = "https://agentme.onrender.com";
 export const AgentAPI = {
   async chat(userMessage: string, history: {role: string, content: string}[]) {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 90000); // 90 ثانية
+    const timeout = setTimeout(() => controller.abort(), 90000);
     
     try {
       const res = await fetch(`${BACKEND_URL}/chat`, {
@@ -20,6 +20,8 @@ export const AgentAPI = {
       });
       const data = await res.json();
       return data.response || "Sorry, no response received.";
+    } catch (e) {
+      throw e;
     } finally {
       clearTimeout(timeout);
     }
